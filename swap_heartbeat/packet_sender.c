@@ -17,7 +17,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#define SHM_NAME "/packet_transmission_shm"
+#define SHM_NAME "packet_transmission_shm"
 #define SHM_SIZE sizeof(int)
 
 int *stop_flag; // Stop flag
@@ -29,6 +29,8 @@ int start_packet_transmission(const char *iface, const char *src_mac,
                               int interval, int num_packets);
 
 void stop_transmission();
+
+void init_shared_memory();
 
 // Function to initialize shared memory
 void init_shared_memory() {
