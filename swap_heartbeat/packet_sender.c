@@ -26,9 +26,7 @@ int *stop_flag; // Stop flag
 int start_packet_transmission(const char *iface, const char *src_mac,
                               const char *dst_mac, const char *src_ip,
                               const char *dst_ip, int src_port, int dst_port,
-                              int interval, int num_packets);
-
-void stop_transmission();
+                              int interval);
 
 void init_shared_memory();
 
@@ -39,11 +37,6 @@ void init_shared_memory() {
         perror("shm_open");
         exit(1);
     }
-
-    // if (ftruncate(shm_fd, SHM_SIZE) == -1) {
-    //     perror("ftruncate");
-    //     exit(1);
-    // }
 
     stop_flag = mmap(NULL, SHM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
     if (stop_flag == MAP_FAILED) {
@@ -108,7 +101,7 @@ void create_packet(char *packet, uint32_t seq_num, const char *src_mac,
 int start_packet_transmission(const char *iface, const char *src_mac,
                               const char *dst_mac, const char *src_ip,
                               const char *dst_ip, int src_port, int dst_port,
-                              int interval, int num_packets) {
+                              int interval) {
   int sock;
   struct sockaddr_ll sa;
   char packet[sizeof(struct ethhdr) + sizeof(struct iphdr) +
@@ -130,8 +123,6 @@ int start_packet_transmission(const char *iface, const char *src_mac,
   long long start_time = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
 
   while (*stop_flag == 0) {
-
-    printf("%d\n", *stop_flag);
 
     memset(packet, 0, sizeof(packet));
 
@@ -155,9 +146,4 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
   close(sock);
   return 0;
-}
-
-// Function to handle the stop signal from Python
-void stop_transmission() {
-    *stop_flag = 1;
 }

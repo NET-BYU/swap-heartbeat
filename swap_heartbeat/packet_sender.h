@@ -5,9 +5,7 @@
 int start_packet_transmission(const char *iface, const char *src_mac,
                               const char *dst_mac, const char *src_ip,
                               const char *dst_ip, int src_port, int dst_port,
-                              int interval, int num_packets);
-
-void stop_transmission();
+                              int interval);
 
 void init_shared_memory();
 
