@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <arpa/inet.h>
 #include <linux/if_packet.h>
 #include <net/if.h>
@@ -12,8 +13,9 @@
 #include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
+#include <semaphore.h>  // Include semaphore library
 
-static volatile int stop_flag = 0; // Stop flag
+sem_t stop_semaphore;  // Define a semaphore for stopping transmission
 
 // Function prototypes
 int start_packet_transmission(const char *iface, const char *src_mac,
@@ -96,8 +98,10 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
   clock_gettime(CLOCK_MONOTONIC, &ts);
   long long start_time = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
-  
-  while (!stop_flag) {
+
+  sem_init(&stop_semaphore, 0, 0);  // Initialize semaphore to 0 (not signaled)
+
+  while (1) {
     memset(packet, 0, sizeof(packet));
 
     clock_gettime(CLOCK_MONOTONIC, &ts);
@@ -114,6 +118,11 @@ int start_packet_transmission(const char *iface, const char *src_mac,
                sizeof(struct sockaddr_ll)) < 0) {
       perror("Packet send failed");
     }
+
+    // Check if the semaphore is signaled (i.e., stop transmission)
+    if (sem_trywait(&stop_semaphore) == 0) {
+      break;  // Break the loop if the semaphore is signaled
+    }
   }
 
   close(sock);
@@ -122,5 +131,5 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
 // Function to handle the stop signal from Python
 void stop_transmission() {
-    stop_flag = 1;
+    sem_post(&stop_semaphore);  // Signal the semaphore to stop transmission
 }
