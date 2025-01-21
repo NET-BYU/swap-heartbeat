@@ -1,4 +1,4 @@
-import swap_heartbeat
+from swap_heartbeat import swap_heartbeat
 from time import time
 
 start = time()

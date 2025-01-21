@@ -15,16 +15,13 @@
 
 volatile int stop_flag = 0; // Stop flag
 
-// Function to handle the stop signal from Python
-void stop_transmission() {
-    stop_flag = 1;
-}
-
-// Function prototype
+// Function prototypes
 int start_packet_transmission(const char *iface, const char *src_mac,
                               const char *dst_mac, const char *src_ip,
                               const char *dst_ip, int src_port, int dst_port,
                               int interval, int num_packets);
+
+void stop_transmission();
 
 unsigned short checksum(void *b, int len) {
   unsigned short *buf = b;
@@ -121,4 +118,9 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
   close(sock);
   return 0;
+}
+
+// Function to handle the stop signal from Python
+void stop_transmission() {
+    stop_flag = 1;
 }

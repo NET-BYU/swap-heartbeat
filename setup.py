@@ -4,7 +4,7 @@ from Cython.Build import cythonize
 # Define the Cython extension
 extensions = [
     Extension(
-        name="swap_heartbeat",
+        name="swap_heartbeat.swap_heartbeat",
         sources=["swap_heartbeat/swap_heartbeat.pyx", "swap_heartbeat/packet_sender.c"],
         include_dirs=["swap_heartbeat/"],
         extra_compile_args=["-Wall", "-O2"],  # Optimization flags
@@ -20,15 +20,12 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     packages=["swap_heartbeat"],
+    package_dir={"": "."},
     ext_modules=cythonize(extensions),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Programming Language :: C",
-        "Operating System :: OS Independent",
-    ],
     python_requires=">=3.6",
     install_requires=[
         "Cython",
     ],
     zip_safe=False,
+    include_package_data=True
 )
