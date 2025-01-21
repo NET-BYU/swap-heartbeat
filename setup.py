@@ -1,23 +1,3 @@
-# from setuptools import setup
-# from Cython.Build import cythonize
-# from setuptools.extension import Extension
-
-# ext_modules = [
-#     Extension(
-#         "swap_heartbeat",
-#         sources=["swap_heartbeat.pyx", "packet_sender.c"],
-#         libraries=[],
-#         include_dirs=["."],
-#         language="c",
-#     )
-# ]
-
-# setup(
-#     name="swap_heartbeat",
-#     ext_modules=cythonize(ext_modules),
-#     version="0.0.1"
-# )
-
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 
