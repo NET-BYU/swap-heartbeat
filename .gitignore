@@ -1,0 +1,28 @@
+# Ignore build artifacts
+build/
+dist/
+*.egg-info
+*.so
+*.o
+*.a
+*.pyd
+*.dll
+*.dylib
+*.pyc
+__pycache__/
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PyCharm stuff
+*.iml
+.DS_Store
+
