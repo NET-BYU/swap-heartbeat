@@ -20,7 +20,7 @@
 #define SHM_NAME "/packet_transmission_shm"
 #define SHM_SIZE sizeof(int)
 
-extern int *stop_flag; // Stop flag
+int *stop_flag; // Stop flag
 
 // Function prototypes
 int start_packet_transmission(const char *iface, const char *src_mac,
