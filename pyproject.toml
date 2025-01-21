@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "swap-heartbeat"
 version = "0.1.0"
-description = "A Python wrapper for sending SWAP hearbeat packets."
+description = "A Python wrapper for sending SWAP heartbeat packets."
 authors = [
     {name = "Chris Kitras", email = "chkitras@byu.edu"}
 ]
@@ -29,9 +29,6 @@ packages = ["swap_heartbeat"]
 
 [tool.setuptools.exclude-package-data]
 "swap_heartbeat" = ["__pycache__/*"]
-
-[tool.setuptools.ext_modules]
-"swap_heartbeat" = "Cython.Build.cythonize(['swap_heartbeat/*.pyx'])"
 
 [project.scripts]
 swap_heartbeat = "swap_heartbeat.cli:main"
