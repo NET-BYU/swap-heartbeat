@@ -14,6 +14,7 @@ cdef extern from "packet_sender.h":
         int interval, 
         int num_packets
     )
+    void stop_transmission()
 
 def run_packet_transmission(
     bytes iface, 
@@ -53,3 +54,7 @@ def run_packet_transmission(
     
     if result != 0:
         raise RuntimeError("Packet transmission failed")
+
+def stop_packet_transmission():
+    """Stops the ongoing packet transmission"""
+    stop_transmission()
