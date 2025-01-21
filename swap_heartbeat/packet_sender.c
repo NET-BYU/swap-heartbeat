@@ -13,7 +13,7 @@
 #include <time.h>
 #include <unistd.h>
 
-volatile int stop_flag = 0; // Stop flag
+extern int *stop_flag; // Stop flag
 
 // Function prototypes
 int start_packet_transmission(const char *iface, const char *src_mac,
@@ -96,6 +96,8 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
   clock_gettime(CLOCK_MONOTONIC, &ts);
   long long start_time = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
+  
+  *stop_flag = 0;
 
   while (!stop_flag) {
     memset(packet, 0, sizeof(packet));
@@ -122,5 +124,5 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
 // Function to handle the stop signal from Python
 void stop_transmission() {
-    stop_flag = 1;
+    *stop_flag = 1;
 }
