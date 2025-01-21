@@ -12,7 +12,6 @@ swap_heartbeat.run_packet_transmission(
     666,   # Source port
     80,    # Destination port
     1000,  # Interval in microseconds
-    60000  # Number of packets to send
 )
 
 end = time()

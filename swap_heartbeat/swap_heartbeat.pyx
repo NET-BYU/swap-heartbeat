@@ -1,6 +1,9 @@
 # Import C types
 from libc.stdint cimport int32_t
+from multiprocessing import shared_memory
 
+shm = shared_memory.SharedMemory(name="packet_transmission_shm", create=True, size=4)
+shm.buf[0] = 0
 
 # Declare the external C function with new parameters
 cdef extern from "packet_sender.h":
@@ -57,3 +60,12 @@ def run_packet_transmission(
 def swap_init():
     """Initializes the shared memory for the swap mechanism"""
     init_shared_memory()
+    
+def stop_packet_transmission():
+    """Stops the packet transmission"""
+    shm.buf[0] = 1
+    
+def swap_cleanup():
+    """Cleans up the shared memory for the swap mechanism"""
+    shm.close()
+    shm.unlink()
