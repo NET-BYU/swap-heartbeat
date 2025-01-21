@@ -14,13 +14,13 @@
             "swap_heartbeat",
             "swap_heartbeat/"
         ],
-        "name": "swap_heartbeat",
+        "name": "swap_heartbeat.swap_heartbeat",
         "sources": [
             "swap_heartbeat/swap_heartbeat.pyx",
             "swap_heartbeat/packet_sender.c"
         ]
     },
-    "module_name": "swap_heartbeat"
+    "module_name": "swap_heartbeat.swap_heartbeat"
 }
 END: Cython Metadata */
 
@@ -1240,8 +1240,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__swap_heartbeat
-#define __PYX_HAVE_API__swap_heartbeat
+#define __PYX_HAVE__swap_heartbeat__swap_heartbeat
+#define __PYX_HAVE_API__swap_heartbeat__swap_heartbeat
 /* Early includes */
 #include <stdint.h>
 #include "packet_sender.h"
@@ -1745,13 +1745,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
-/* SetPackagePathFromImportLib.proto */
-#if PY_MAJOR_VERSION >= 3 && !CYTHON_PEP489_MULTI_PHASE_INIT
-static int __Pyx_SetPackagePathFromImportLib(PyObject *module_name);
-#else
-#define __Pyx_SetPackagePathFromImportLib(a) 0
-#endif
-
 /* IncludeStructmemberH.proto */
 #include <structmember.h>
 
@@ -2009,18 +2002,18 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from "libc.stdint" */
 
-/* Module declarations from "swap_heartbeat" */
+/* Module declarations from "swap_heartbeat.swap_heartbeat" */
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "swap_heartbeat"
-extern int __pyx_module_is_main_swap_heartbeat;
-int __pyx_module_is_main_swap_heartbeat = 0;
+#define __Pyx_MODULE_NAME "swap_heartbeat.swap_heartbeat"
+extern int __pyx_module_is_main_swap_heartbeat__swap_heartbeat;
+int __pyx_module_is_main_swap_heartbeat__swap_heartbeat = 0;
 
-/* Implementation of "swap_heartbeat" */
+/* Implementation of "swap_heartbeat.swap_heartbeat" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_RuntimeError;
 /* #### Code section: string_decls ### */
-static const char __pyx_k__5[] = "?";
+static const char __pyx_k__6[] = "?";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
@@ -2038,19 +2031,21 @@ static const char __pyx_k_interval[] = "interval";
 static const char __pyx_k_src_port[] = "src_port";
 static const char __pyx_k_c_dst_mac[] = "c_dst_mac";
 static const char __pyx_k_c_src_mac[] = "c_src_mac";
+static const char __pyx_k_swap_init[] = "swap_init";
 static const char __pyx_k_num_packets[] = "num_packets";
 static const char __pyx_k_RuntimeError[] = "RuntimeError";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
-static const char __pyx_k_swap_heartbeat[] = "swap_heartbeat";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_run_packet_transmission[] = "run_packet_transmission";
 static const char __pyx_k_stop_packet_transmission[] = "stop_packet_transmission";
 static const char __pyx_k_Packet_transmission_failed[] = "Packet transmission failed";
+static const char __pyx_k_swap_heartbeat_swap_heartbeat[] = "swap_heartbeat.swap_heartbeat";
 static const char __pyx_k_swap_heartbeat_swap_heartbeat_py[] = "swap_heartbeat/swap_heartbeat.pyx";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iface, PyObject *__pyx_v_src_mac, PyObject *__pyx_v_dst_mac, PyObject *__pyx_v_src_ip, PyObject *__pyx_v_dst_ip, int __pyx_v_src_port, int __pyx_v_dst_port, int __pyx_v_interval, int __pyx_v_num_packets); /* proto */
-static PyObject *__pyx_pf_14swap_heartbeat_2stop_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_14swap_heartbeat_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iface, PyObject *__pyx_v_src_mac, PyObject *__pyx_v_dst_mac, PyObject *__pyx_v_src_ip, PyObject *__pyx_v_dst_ip, int __pyx_v_src_port, int __pyx_v_dst_port, int __pyx_v_interval, int __pyx_v_num_packets); /* proto */
+static PyObject *__pyx_pf_14swap_heartbeat_14swap_heartbeat_2stop_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_14swap_heartbeat_14swap_heartbeat_4swap_init(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 typedef struct {
@@ -2084,7 +2079,7 @@ typedef struct {
   #endif
   PyObject *__pyx_kp_s_Packet_transmission_failed;
   PyObject *__pyx_n_s_RuntimeError;
-  PyObject *__pyx_n_s__5;
+  PyObject *__pyx_n_s__6;
   PyObject *__pyx_n_s_asyncio_coroutines;
   PyObject *__pyx_n_s_c_dst_ip;
   PyObject *__pyx_n_s_c_dst_mac;
@@ -2107,14 +2102,15 @@ typedef struct {
   PyObject *__pyx_n_s_src_mac;
   PyObject *__pyx_n_s_src_port;
   PyObject *__pyx_n_s_stop_packet_transmission;
-  PyObject *__pyx_n_s_swap_heartbeat;
-  PyObject *__pyx_n_u_swap_heartbeat;
+  PyObject *__pyx_n_s_swap_heartbeat_swap_heartbeat;
   PyObject *__pyx_kp_s_swap_heartbeat_swap_heartbeat_py;
+  PyObject *__pyx_n_s_swap_init;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_tuple_;
   PyObject *__pyx_tuple__2;
   PyObject *__pyx_codeobj__3;
   PyObject *__pyx_codeobj__4;
+  PyObject *__pyx_codeobj__5;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2159,7 +2155,7 @@ static int __pyx_m_clear(PyObject *m) {
   #endif
   Py_CLEAR(clear_module_state->__pyx_kp_s_Packet_transmission_failed);
   Py_CLEAR(clear_module_state->__pyx_n_s_RuntimeError);
-  Py_CLEAR(clear_module_state->__pyx_n_s__5);
+  Py_CLEAR(clear_module_state->__pyx_n_s__6);
   Py_CLEAR(clear_module_state->__pyx_n_s_asyncio_coroutines);
   Py_CLEAR(clear_module_state->__pyx_n_s_c_dst_ip);
   Py_CLEAR(clear_module_state->__pyx_n_s_c_dst_mac);
@@ -2182,14 +2178,15 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_src_mac);
   Py_CLEAR(clear_module_state->__pyx_n_s_src_port);
   Py_CLEAR(clear_module_state->__pyx_n_s_stop_packet_transmission);
-  Py_CLEAR(clear_module_state->__pyx_n_s_swap_heartbeat);
-  Py_CLEAR(clear_module_state->__pyx_n_u_swap_heartbeat);
+  Py_CLEAR(clear_module_state->__pyx_n_s_swap_heartbeat_swap_heartbeat);
   Py_CLEAR(clear_module_state->__pyx_kp_s_swap_heartbeat_swap_heartbeat_py);
+  Py_CLEAR(clear_module_state->__pyx_n_s_swap_init);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_tuple_);
   Py_CLEAR(clear_module_state->__pyx_tuple__2);
   Py_CLEAR(clear_module_state->__pyx_codeobj__3);
   Py_CLEAR(clear_module_state->__pyx_codeobj__4);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__5);
   return 0;
 }
 #endif
@@ -2212,7 +2209,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   #endif
   Py_VISIT(traverse_module_state->__pyx_kp_s_Packet_transmission_failed);
   Py_VISIT(traverse_module_state->__pyx_n_s_RuntimeError);
-  Py_VISIT(traverse_module_state->__pyx_n_s__5);
+  Py_VISIT(traverse_module_state->__pyx_n_s__6);
   Py_VISIT(traverse_module_state->__pyx_n_s_asyncio_coroutines);
   Py_VISIT(traverse_module_state->__pyx_n_s_c_dst_ip);
   Py_VISIT(traverse_module_state->__pyx_n_s_c_dst_mac);
@@ -2235,14 +2232,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_src_mac);
   Py_VISIT(traverse_module_state->__pyx_n_s_src_port);
   Py_VISIT(traverse_module_state->__pyx_n_s_stop_packet_transmission);
-  Py_VISIT(traverse_module_state->__pyx_n_s_swap_heartbeat);
-  Py_VISIT(traverse_module_state->__pyx_n_u_swap_heartbeat);
+  Py_VISIT(traverse_module_state->__pyx_n_s_swap_heartbeat_swap_heartbeat);
   Py_VISIT(traverse_module_state->__pyx_kp_s_swap_heartbeat_swap_heartbeat_py);
+  Py_VISIT(traverse_module_state->__pyx_n_s_swap_init);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_tuple_);
   Py_VISIT(traverse_module_state->__pyx_tuple__2);
   Py_VISIT(traverse_module_state->__pyx_codeobj__3);
   Py_VISIT(traverse_module_state->__pyx_codeobj__4);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__5);
   return 0;
 }
 #endif
@@ -2277,7 +2275,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #endif
 #define __pyx_kp_s_Packet_transmission_failed __pyx_mstate_global->__pyx_kp_s_Packet_transmission_failed
 #define __pyx_n_s_RuntimeError __pyx_mstate_global->__pyx_n_s_RuntimeError
-#define __pyx_n_s__5 __pyx_mstate_global->__pyx_n_s__5
+#define __pyx_n_s__6 __pyx_mstate_global->__pyx_n_s__6
 #define __pyx_n_s_asyncio_coroutines __pyx_mstate_global->__pyx_n_s_asyncio_coroutines
 #define __pyx_n_s_c_dst_ip __pyx_mstate_global->__pyx_n_s_c_dst_ip
 #define __pyx_n_s_c_dst_mac __pyx_mstate_global->__pyx_n_s_c_dst_mac
@@ -2300,18 +2298,19 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_src_mac __pyx_mstate_global->__pyx_n_s_src_mac
 #define __pyx_n_s_src_port __pyx_mstate_global->__pyx_n_s_src_port
 #define __pyx_n_s_stop_packet_transmission __pyx_mstate_global->__pyx_n_s_stop_packet_transmission
-#define __pyx_n_s_swap_heartbeat __pyx_mstate_global->__pyx_n_s_swap_heartbeat
-#define __pyx_n_u_swap_heartbeat __pyx_mstate_global->__pyx_n_u_swap_heartbeat
+#define __pyx_n_s_swap_heartbeat_swap_heartbeat __pyx_mstate_global->__pyx_n_s_swap_heartbeat_swap_heartbeat
 #define __pyx_kp_s_swap_heartbeat_swap_heartbeat_py __pyx_mstate_global->__pyx_kp_s_swap_heartbeat_swap_heartbeat_py
+#define __pyx_n_s_swap_init __pyx_mstate_global->__pyx_n_s_swap_init
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_tuple_ __pyx_mstate_global->__pyx_tuple_
 #define __pyx_tuple__2 __pyx_mstate_global->__pyx_tuple__2
 #define __pyx_codeobj__3 __pyx_mstate_global->__pyx_codeobj__3
 #define __pyx_codeobj__4 __pyx_mstate_global->__pyx_codeobj__4
+#define __pyx_codeobj__5 __pyx_mstate_global->__pyx_codeobj__5
 /* #### Code section: module_code ### */
 
-/* "swap_heartbeat.pyx":19
- *     void stop_transmission()
+/* "swap_heartbeat/swap_heartbeat.pyx":21
+ *     void init_shared_memory()
  * 
  * def run_packet_transmission(             # <<<<<<<<<<<<<<
  *     bytes iface,
@@ -2319,16 +2318,16 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14swap_heartbeat_1run_packet_transmission(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_14swap_heartbeat_14swap_heartbeat_1run_packet_transmission(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_14swap_heartbeat_run_packet_transmission, "\n    Runs the packet transmission with configurable parameters.\n\n    Args:\n        iface (bytes): Network interface name (e.g., b\"eno1\")\n        src_mac (bytes): Source MAC address (e.g., b\"\303\236\302\255\302\276\303\257\303\236\302\255\")\n        dst_mac (bytes): Destination MAC address (e.g., b\"\302\270'\303\253=\303\206\302\204\")\n        src_ip (bytes): Source IP address (e.g., b\"192.168.0.121\")\n        dst_ip (bytes): Destination IP address (e.g., b\"192.168.0.246\")\n        src_port (int): Source port number\n        dst_port (int): Destination port number\n        interval (int): Packet sending interval in microseconds\n        num_packets (int): Number of packets to send\n    ");
-static PyMethodDef __pyx_mdef_14swap_heartbeat_1run_packet_transmission = {"run_packet_transmission", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14swap_heartbeat_1run_packet_transmission, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_14swap_heartbeat_run_packet_transmission};
-static PyObject *__pyx_pw_14swap_heartbeat_1run_packet_transmission(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_14swap_heartbeat_14swap_heartbeat_run_packet_transmission, "\n    Runs the packet transmission with configurable parameters.\n\n    Args:\n        iface (bytes): Network interface name (e.g., b\"eno1\")\n        src_mac (bytes): Source MAC address (e.g., b\"\303\236\302\255\302\276\303\257\303\236\302\255\")\n        dst_mac (bytes): Destination MAC address (e.g., b\"\302\270'\303\253=\303\206\302\204\")\n        src_ip (bytes): Source IP address (e.g., b\"192.168.0.121\")\n        dst_ip (bytes): Destination IP address (e.g., b\"192.168.0.246\")\n        src_port (int): Source port number\n        dst_port (int): Destination port number\n        interval (int): Packet sending interval in microseconds\n        num_packets (int): Number of packets to send\n    ");
+static PyMethodDef __pyx_mdef_14swap_heartbeat_14swap_heartbeat_1run_packet_transmission = {"run_packet_transmission", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14swap_heartbeat_14swap_heartbeat_1run_packet_transmission, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_14swap_heartbeat_14swap_heartbeat_run_packet_transmission};
+static PyObject *__pyx_pw_14swap_heartbeat_14swap_heartbeat_1run_packet_transmission(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2396,7 +2395,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -2404,9 +2403,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 1); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 1); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -2414,9 +2413,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 2); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 2); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -2424,9 +2423,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[3]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 3); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 3); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -2434,9 +2433,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[4]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 4); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 4); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -2444,9 +2443,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[5]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 5); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 5); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -2454,9 +2453,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[6]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 6); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 6); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
@@ -2464,9 +2463,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[7]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 7); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 7); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  8:
@@ -2474,14 +2473,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[8]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 8); __PYX_ERR(0, 19, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, 8); __PYX_ERR(0, 21, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "run_packet_transmission") < 0)) __PYX_ERR(0, 19, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "run_packet_transmission") < 0)) __PYX_ERR(0, 21, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 9)) {
       goto __pyx_L5_argtuple_error;
@@ -2501,14 +2500,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     __pyx_v_dst_mac = ((PyObject*)values[2]);
     __pyx_v_src_ip = ((PyObject*)values[3]);
     __pyx_v_dst_ip = ((PyObject*)values[4]);
-    __pyx_v_src_port = __Pyx_PyInt_As_int(values[5]); if (unlikely((__pyx_v_src_port == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
-    __pyx_v_dst_port = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_dst_port == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L3_error)
-    __pyx_v_interval = __Pyx_PyInt_As_int(values[7]); if (unlikely((__pyx_v_interval == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
-    __pyx_v_num_packets = __Pyx_PyInt_As_int(values[8]); if (unlikely((__pyx_v_num_packets == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 28, __pyx_L3_error)
+    __pyx_v_src_port = __Pyx_PyInt_As_int(values[5]); if (unlikely((__pyx_v_src_port == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
+    __pyx_v_dst_port = __Pyx_PyInt_As_int(values[6]); if (unlikely((__pyx_v_dst_port == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 28, __pyx_L3_error)
+    __pyx_v_interval = __Pyx_PyInt_As_int(values[7]); if (unlikely((__pyx_v_interval == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+    __pyx_v_num_packets = __Pyx_PyInt_As_int(values[8]); if (unlikely((__pyx_v_num_packets == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, __pyx_nargs); __PYX_ERR(0, 19, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("run_packet_transmission", 1, 9, 9, __pyx_nargs); __PYX_ERR(0, 21, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2518,16 +2517,16 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("swap_heartbeat.run_packet_transmission", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("swap_heartbeat.swap_heartbeat.run_packet_transmission", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_iface), (&PyBytes_Type), 1, "iface", 1))) __PYX_ERR(0, 20, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_src_mac), (&PyBytes_Type), 1, "src_mac", 1))) __PYX_ERR(0, 21, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dst_mac), (&PyBytes_Type), 1, "dst_mac", 1))) __PYX_ERR(0, 22, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_src_ip), (&PyBytes_Type), 1, "src_ip", 1))) __PYX_ERR(0, 23, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dst_ip), (&PyBytes_Type), 1, "dst_ip", 1))) __PYX_ERR(0, 24, __pyx_L1_error)
-  __pyx_r = __pyx_pf_14swap_heartbeat_run_packet_transmission(__pyx_self, __pyx_v_iface, __pyx_v_src_mac, __pyx_v_dst_mac, __pyx_v_src_ip, __pyx_v_dst_ip, __pyx_v_src_port, __pyx_v_dst_port, __pyx_v_interval, __pyx_v_num_packets);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_iface), (&PyBytes_Type), 1, "iface", 1))) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_src_mac), (&PyBytes_Type), 1, "src_mac", 1))) __PYX_ERR(0, 23, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dst_mac), (&PyBytes_Type), 1, "dst_mac", 1))) __PYX_ERR(0, 24, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_src_ip), (&PyBytes_Type), 1, "src_ip", 1))) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dst_ip), (&PyBytes_Type), 1, "dst_ip", 1))) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_r = __pyx_pf_14swap_heartbeat_14swap_heartbeat_run_packet_transmission(__pyx_self, __pyx_v_iface, __pyx_v_src_mac, __pyx_v_dst_mac, __pyx_v_src_ip, __pyx_v_dst_ip, __pyx_v_src_port, __pyx_v_dst_port, __pyx_v_interval, __pyx_v_num_packets);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2544,7 +2543,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iface, PyObject *__pyx_v_src_mac, PyObject *__pyx_v_dst_mac, PyObject *__pyx_v_src_ip, PyObject *__pyx_v_dst_ip, int __pyx_v_src_port, int __pyx_v_dst_port, int __pyx_v_interval, int __pyx_v_num_packets) {
+static PyObject *__pyx_pf_14swap_heartbeat_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_iface, PyObject *__pyx_v_src_mac, PyObject *__pyx_v_dst_mac, PyObject *__pyx_v_src_ip, PyObject *__pyx_v_dst_ip, int __pyx_v_src_port, int __pyx_v_dst_port, int __pyx_v_interval, int __pyx_v_num_packets) {
   char const *__pyx_v_c_iface;
   char const *__pyx_v_c_src_mac;
   char const *__pyx_v_c_dst_mac;
@@ -2565,7 +2564,7 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("run_packet_transmission", 1);
 
-  /* "swap_heartbeat.pyx":44
+  /* "swap_heartbeat/swap_heartbeat.pyx":46
  *         num_packets (int): Number of packets to send
  *     """
  *     cdef const char *c_iface = iface             # <<<<<<<<<<<<<<
@@ -2574,12 +2573,12 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   if (unlikely(__pyx_v_iface == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "expected bytes, NoneType found");
-    __PYX_ERR(0, 44, __pyx_L1_error)
+    __PYX_ERR(0, 46, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyBytes_AsString(__pyx_v_iface); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_AsString(__pyx_v_iface); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
   __pyx_v_c_iface = __pyx_t_1;
 
-  /* "swap_heartbeat.pyx":45
+  /* "swap_heartbeat/swap_heartbeat.pyx":47
  *     """
  *     cdef const char *c_iface = iface
  *     cdef const char *c_src_mac = src_mac             # <<<<<<<<<<<<<<
@@ -2588,12 +2587,12 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   if (unlikely(__pyx_v_src_mac == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "expected bytes, NoneType found");
-    __PYX_ERR(0, 45, __pyx_L1_error)
+    __PYX_ERR(0, 47, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyBytes_AsString(__pyx_v_src_mac); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyBytes_AsString(__pyx_v_src_mac); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L1_error)
   __pyx_v_c_src_mac = __pyx_t_2;
 
-  /* "swap_heartbeat.pyx":46
+  /* "swap_heartbeat/swap_heartbeat.pyx":48
  *     cdef const char *c_iface = iface
  *     cdef const char *c_src_mac = src_mac
  *     cdef const char *c_dst_mac = dst_mac             # <<<<<<<<<<<<<<
@@ -2602,12 +2601,12 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   if (unlikely(__pyx_v_dst_mac == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "expected bytes, NoneType found");
-    __PYX_ERR(0, 46, __pyx_L1_error)
+    __PYX_ERR(0, 48, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyBytes_AsString(__pyx_v_dst_mac); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyBytes_AsString(__pyx_v_dst_mac); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 48, __pyx_L1_error)
   __pyx_v_c_dst_mac = __pyx_t_3;
 
-  /* "swap_heartbeat.pyx":47
+  /* "swap_heartbeat/swap_heartbeat.pyx":49
  *     cdef const char *c_src_mac = src_mac
  *     cdef const char *c_dst_mac = dst_mac
  *     cdef const char *c_src_ip = src_ip             # <<<<<<<<<<<<<<
@@ -2616,12 +2615,12 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   if (unlikely(__pyx_v_src_ip == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "expected bytes, NoneType found");
-    __PYX_ERR(0, 47, __pyx_L1_error)
+    __PYX_ERR(0, 49, __pyx_L1_error)
   }
-  __pyx_t_4 = __Pyx_PyBytes_AsString(__pyx_v_src_ip); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyBytes_AsString(__pyx_v_src_ip); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 49, __pyx_L1_error)
   __pyx_v_c_src_ip = __pyx_t_4;
 
-  /* "swap_heartbeat.pyx":48
+  /* "swap_heartbeat/swap_heartbeat.pyx":50
  *     cdef const char *c_dst_mac = dst_mac
  *     cdef const char *c_src_ip = src_ip
  *     cdef const char *c_dst_ip = dst_ip             # <<<<<<<<<<<<<<
@@ -2630,12 +2629,12 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   if (unlikely(__pyx_v_dst_ip == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "expected bytes, NoneType found");
-    __PYX_ERR(0, 48, __pyx_L1_error)
+    __PYX_ERR(0, 50, __pyx_L1_error)
   }
-  __pyx_t_5 = __Pyx_PyBytes_AsString(__pyx_v_dst_ip); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyBytes_AsString(__pyx_v_dst_ip); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
   __pyx_v_c_dst_ip = __pyx_t_5;
 
-  /* "swap_heartbeat.pyx":50
+  /* "swap_heartbeat/swap_heartbeat.pyx":52
  *     cdef const char *c_dst_ip = dst_ip
  * 
  *     result = start_packet_transmission(             # <<<<<<<<<<<<<<
@@ -2644,7 +2643,7 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   __pyx_v_result = start_packet_transmission(__pyx_v_c_iface, __pyx_v_c_src_mac, __pyx_v_c_dst_mac, __pyx_v_c_src_ip, __pyx_v_c_dst_ip, __pyx_v_src_port, __pyx_v_dst_port, __pyx_v_interval, __pyx_v_num_packets);
 
-  /* "swap_heartbeat.pyx":55
+  /* "swap_heartbeat/swap_heartbeat.pyx":57
  *     )
  * 
  *     if result != 0:             # <<<<<<<<<<<<<<
@@ -2654,20 +2653,20 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
   __pyx_t_6 = (__pyx_v_result != 0);
   if (unlikely(__pyx_t_6)) {
 
-    /* "swap_heartbeat.pyx":56
+    /* "swap_heartbeat/swap_heartbeat.pyx":58
  * 
  *     if result != 0:
  *         raise RuntimeError("Packet transmission failed")             # <<<<<<<<<<<<<<
  * 
  * def stop_packet_transmission():
  */
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_Raise(__pyx_t_7, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __PYX_ERR(0, 56, __pyx_L1_error)
+    __PYX_ERR(0, 58, __pyx_L1_error)
 
-    /* "swap_heartbeat.pyx":55
+    /* "swap_heartbeat/swap_heartbeat.pyx":57
  *     )
  * 
  *     if result != 0:             # <<<<<<<<<<<<<<
@@ -2676,8 +2675,8 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
   }
 
-  /* "swap_heartbeat.pyx":19
- *     void stop_transmission()
+  /* "swap_heartbeat/swap_heartbeat.pyx":21
+ *     void init_shared_memory()
  * 
  * def run_packet_transmission(             # <<<<<<<<<<<<<<
  *     bytes iface,
@@ -2689,7 +2688,7 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("swap_heartbeat.run_packet_transmission", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("swap_heartbeat.swap_heartbeat.run_packet_transmission", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2697,7 +2696,7 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "swap_heartbeat.pyx":58
+/* "swap_heartbeat/swap_heartbeat.pyx":60
  *         raise RuntimeError("Packet transmission failed")
  * 
  * def stop_packet_transmission():             # <<<<<<<<<<<<<<
@@ -2706,40 +2705,94 @@ static PyObject *__pyx_pf_14swap_heartbeat_run_packet_transmission(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14swap_heartbeat_3stop_packet_transmission(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-PyDoc_STRVAR(__pyx_doc_14swap_heartbeat_2stop_packet_transmission, "Stops the ongoing packet transmission");
-static PyMethodDef __pyx_mdef_14swap_heartbeat_3stop_packet_transmission = {"stop_packet_transmission", (PyCFunction)__pyx_pw_14swap_heartbeat_3stop_packet_transmission, METH_NOARGS, __pyx_doc_14swap_heartbeat_2stop_packet_transmission};
-static PyObject *__pyx_pw_14swap_heartbeat_3stop_packet_transmission(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_14swap_heartbeat_14swap_heartbeat_3stop_packet_transmission(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+PyDoc_STRVAR(__pyx_doc_14swap_heartbeat_14swap_heartbeat_2stop_packet_transmission, "Stops the ongoing packet transmission");
+static PyMethodDef __pyx_mdef_14swap_heartbeat_14swap_heartbeat_3stop_packet_transmission = {"stop_packet_transmission", (PyCFunction)__pyx_pw_14swap_heartbeat_14swap_heartbeat_3stop_packet_transmission, METH_NOARGS, __pyx_doc_14swap_heartbeat_14swap_heartbeat_2stop_packet_transmission};
+static PyObject *__pyx_pw_14swap_heartbeat_14swap_heartbeat_3stop_packet_transmission(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("stop_packet_transmission (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_14swap_heartbeat_2stop_packet_transmission(__pyx_self);
+  __pyx_r = __pyx_pf_14swap_heartbeat_14swap_heartbeat_2stop_packet_transmission(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14swap_heartbeat_2stop_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_14swap_heartbeat_14swap_heartbeat_2stop_packet_transmission(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("stop_packet_transmission", 1);
 
-  /* "swap_heartbeat.pyx":60
+  /* "swap_heartbeat/swap_heartbeat.pyx":62
  * def stop_packet_transmission():
  *     """Stops the ongoing packet transmission"""
  *     stop_transmission()             # <<<<<<<<<<<<<<
+ * 
+ * def swap_init():
  */
   stop_transmission();
 
-  /* "swap_heartbeat.pyx":58
+  /* "swap_heartbeat/swap_heartbeat.pyx":60
  *         raise RuntimeError("Packet transmission failed")
  * 
  * def stop_packet_transmission():             # <<<<<<<<<<<<<<
  *     """Stops the ongoing packet transmission"""
  *     stop_transmission()
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "swap_heartbeat/swap_heartbeat.pyx":64
+ *     stop_transmission()
+ * 
+ * def swap_init():             # <<<<<<<<<<<<<<
+ *     """Initializes the shared memory for the swap mechanism"""
+ *     init_shared_memory()
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_14swap_heartbeat_14swap_heartbeat_5swap_init(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+PyDoc_STRVAR(__pyx_doc_14swap_heartbeat_14swap_heartbeat_4swap_init, "Initializes the shared memory for the swap mechanism");
+static PyMethodDef __pyx_mdef_14swap_heartbeat_14swap_heartbeat_5swap_init = {"swap_init", (PyCFunction)__pyx_pw_14swap_heartbeat_14swap_heartbeat_5swap_init, METH_NOARGS, __pyx_doc_14swap_heartbeat_14swap_heartbeat_4swap_init};
+static PyObject *__pyx_pw_14swap_heartbeat_14swap_heartbeat_5swap_init(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("swap_init (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_14swap_heartbeat_14swap_heartbeat_4swap_init(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_14swap_heartbeat_14swap_heartbeat_4swap_init(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("swap_init", 1);
+
+  /* "swap_heartbeat/swap_heartbeat.pyx":66
+ * def swap_init():
+ *     """Initializes the shared memory for the swap mechanism"""
+ *     init_shared_memory()             # <<<<<<<<<<<<<<
+ */
+  init_shared_memory();
+
+  /* "swap_heartbeat/swap_heartbeat.pyx":64
+ *     stop_transmission()
+ * 
+ * def swap_init():             # <<<<<<<<<<<<<<
+ *     """Initializes the shared memory for the swap mechanism"""
+ *     init_shared_memory()
  */
 
   /* function exit code */
@@ -2767,7 +2820,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
     {&__pyx_kp_s_Packet_transmission_failed, __pyx_k_Packet_transmission_failed, sizeof(__pyx_k_Packet_transmission_failed), 0, 0, 1, 0},
     {&__pyx_n_s_RuntimeError, __pyx_k_RuntimeError, sizeof(__pyx_k_RuntimeError), 0, 0, 1, 1},
-    {&__pyx_n_s__5, __pyx_k__5, sizeof(__pyx_k__5), 0, 0, 1, 1},
+    {&__pyx_n_s__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 0, 1, 1},
     {&__pyx_n_s_asyncio_coroutines, __pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 0, 1, 1},
     {&__pyx_n_s_c_dst_ip, __pyx_k_c_dst_ip, sizeof(__pyx_k_c_dst_ip), 0, 0, 1, 1},
     {&__pyx_n_s_c_dst_mac, __pyx_k_c_dst_mac, sizeof(__pyx_k_c_dst_mac), 0, 0, 1, 1},
@@ -2790,9 +2843,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_src_mac, __pyx_k_src_mac, sizeof(__pyx_k_src_mac), 0, 0, 1, 1},
     {&__pyx_n_s_src_port, __pyx_k_src_port, sizeof(__pyx_k_src_port), 0, 0, 1, 1},
     {&__pyx_n_s_stop_packet_transmission, __pyx_k_stop_packet_transmission, sizeof(__pyx_k_stop_packet_transmission), 0, 0, 1, 1},
-    {&__pyx_n_s_swap_heartbeat, __pyx_k_swap_heartbeat, sizeof(__pyx_k_swap_heartbeat), 0, 0, 1, 1},
-    {&__pyx_n_u_swap_heartbeat, __pyx_k_swap_heartbeat, sizeof(__pyx_k_swap_heartbeat), 0, 1, 0, 1},
+    {&__pyx_n_s_swap_heartbeat_swap_heartbeat, __pyx_k_swap_heartbeat_swap_heartbeat, sizeof(__pyx_k_swap_heartbeat_swap_heartbeat), 0, 0, 1, 1},
     {&__pyx_kp_s_swap_heartbeat_swap_heartbeat_py, __pyx_k_swap_heartbeat_swap_heartbeat_py, sizeof(__pyx_k_swap_heartbeat_swap_heartbeat_py), 0, 0, 1, 0},
+    {&__pyx_n_s_swap_init, __pyx_k_swap_init, sizeof(__pyx_k_swap_init), 0, 0, 1, 1},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {0, 0, 0, 0, 0, 0, 0}
   };
@@ -2800,7 +2853,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 58, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2811,37 +2864,46 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "swap_heartbeat.pyx":56
+  /* "swap_heartbeat/swap_heartbeat.pyx":58
  * 
  *     if result != 0:
  *         raise RuntimeError("Packet transmission failed")             # <<<<<<<<<<<<<<
  * 
  * def stop_packet_transmission():
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Packet_transmission_failed); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Packet_transmission_failed); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "swap_heartbeat.pyx":19
- *     void stop_transmission()
+  /* "swap_heartbeat/swap_heartbeat.pyx":21
+ *     void init_shared_memory()
  * 
  * def run_packet_transmission(             # <<<<<<<<<<<<<<
  *     bytes iface,
  *     bytes src_mac,
  */
-  __pyx_tuple__2 = PyTuple_Pack(15, __pyx_n_s_iface, __pyx_n_s_src_mac, __pyx_n_s_dst_mac, __pyx_n_s_src_ip, __pyx_n_s_dst_ip, __pyx_n_s_src_port, __pyx_n_s_dst_port, __pyx_n_s_interval, __pyx_n_s_num_packets, __pyx_n_s_c_iface, __pyx_n_s_c_src_mac, __pyx_n_s_c_dst_mac, __pyx_n_s_c_src_ip, __pyx_n_s_c_dst_ip, __pyx_n_s_result); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(15, __pyx_n_s_iface, __pyx_n_s_src_mac, __pyx_n_s_dst_mac, __pyx_n_s_src_ip, __pyx_n_s_dst_ip, __pyx_n_s_src_port, __pyx_n_s_dst_port, __pyx_n_s_interval, __pyx_n_s_num_packets, __pyx_n_s_c_iface, __pyx_n_s_c_src_mac, __pyx_n_s_c_dst_mac, __pyx_n_s_c_src_ip, __pyx_n_s_c_dst_ip, __pyx_n_s_result); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
-  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(9, 0, 0, 15, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_swap_heartbeat_swap_heartbeat_py, __pyx_n_s_run_packet_transmission, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(9, 0, 0, 15, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_swap_heartbeat_swap_heartbeat_py, __pyx_n_s_run_packet_transmission, 21, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 21, __pyx_L1_error)
 
-  /* "swap_heartbeat.pyx":58
+  /* "swap_heartbeat/swap_heartbeat.pyx":60
  *         raise RuntimeError("Packet transmission failed")
  * 
  * def stop_packet_transmission():             # <<<<<<<<<<<<<<
  *     """Stops the ongoing packet transmission"""
  *     stop_transmission()
  */
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_swap_heartbeat_swap_heartbeat_py, __pyx_n_s_stop_packet_transmission, 58, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_swap_heartbeat_swap_heartbeat_py, __pyx_n_s_stop_packet_transmission, 60, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 60, __pyx_L1_error)
+
+  /* "swap_heartbeat/swap_heartbeat.pyx":64
+ *     stop_transmission()
+ * 
+ * def swap_init():             # <<<<<<<<<<<<<<
+ *     """Initializes the shared memory for the swap mechanism"""
+ *     init_shared_memory()
+ */
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_swap_heartbeat_swap_heartbeat_py, __pyx_n_s_swap_init, 64, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2996,15 +3058,9 @@ namespace {
 
 #if PY_MAJOR_VERSION < 3
 __Pyx_PyMODINIT_FUNC initswap_heartbeat(void) CYTHON_SMALL_CODE; /*proto*/
-#if !defined(CYTHON_NO_PYINIT_EXPORT) && (defined(_WIN32) || defined(WIN32) || defined(MS_WINDOWS))
-__Pyx_PyMODINIT_FUNC init__init__(void) { initswap_heartbeat(); }
-#endif
 __Pyx_PyMODINIT_FUNC initswap_heartbeat(void)
 #else
 __Pyx_PyMODINIT_FUNC PyInit_swap_heartbeat(void) CYTHON_SMALL_CODE; /*proto*/
-#if !defined(CYTHON_NO_PYINIT_EXPORT) && (defined(_WIN32) || defined(WIN32) || defined(MS_WINDOWS))
-__Pyx_PyMODINIT_FUNC PyInit___init__(void) { return PyInit_swap_heartbeat(); }
-#endif
 __Pyx_PyMODINIT_FUNC PyInit_swap_heartbeat(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
@@ -3183,17 +3239,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_swap_heartbeat) {
+  if (__pyx_module_is_main_swap_heartbeat__swap_heartbeat) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  }
-  if (!CYTHON_PEP489_MULTI_PHASE_INIT) {
-    if (unlikely((__Pyx_SetPackagePathFromImportLib(__pyx_n_u_swap_heartbeat) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "swap_heartbeat")) {
-      if (unlikely((PyDict_SetItemString(modules, "swap_heartbeat", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "swap_heartbeat.swap_heartbeat")) {
+      if (unlikely((PyDict_SetItemString(modules, "swap_heartbeat.swap_heartbeat", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -3214,31 +3267,43 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "swap_heartbeat.pyx":19
- *     void stop_transmission()
+  /* "swap_heartbeat/swap_heartbeat.pyx":21
+ *     void init_shared_memory()
  * 
  * def run_packet_transmission(             # <<<<<<<<<<<<<<
  *     bytes iface,
  *     bytes src_mac,
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14swap_heartbeat_1run_packet_transmission, 0, __pyx_n_s_run_packet_transmission, NULL, __pyx_n_s_swap_heartbeat, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14swap_heartbeat_14swap_heartbeat_1run_packet_transmission, 0, __pyx_n_s_run_packet_transmission, NULL, __pyx_n_s_swap_heartbeat_swap_heartbeat, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_run_packet_transmission, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_run_packet_transmission, __pyx_t_2) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "swap_heartbeat.pyx":58
+  /* "swap_heartbeat/swap_heartbeat.pyx":60
  *         raise RuntimeError("Packet transmission failed")
  * 
  * def stop_packet_transmission():             # <<<<<<<<<<<<<<
  *     """Stops the ongoing packet transmission"""
  *     stop_transmission()
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14swap_heartbeat_3stop_packet_transmission, 0, __pyx_n_s_stop_packet_transmission, NULL, __pyx_n_s_swap_heartbeat, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14swap_heartbeat_14swap_heartbeat_3stop_packet_transmission, 0, __pyx_n_s_stop_packet_transmission, NULL, __pyx_n_s_swap_heartbeat_swap_heartbeat, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_stop_packet_transmission, __pyx_t_2) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_stop_packet_transmission, __pyx_t_2) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "swap_heartbeat.pyx":1
+  /* "swap_heartbeat/swap_heartbeat.pyx":64
+ *     stop_transmission()
+ * 
+ * def swap_init():             # <<<<<<<<<<<<<<
+ *     """Initializes the shared memory for the swap mechanism"""
+ *     init_shared_memory()
+ */
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14swap_heartbeat_14swap_heartbeat_5swap_init, 0, __pyx_n_s_swap_init, NULL, __pyx_n_s_swap_heartbeat_swap_heartbeat, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_swap_init, __pyx_t_2) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "swap_heartbeat/swap_heartbeat.pyx":1
  * # Import C types             # <<<<<<<<<<<<<<
  * from libc.stdint cimport int32_t
  * 
@@ -3255,7 +3320,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init swap_heartbeat", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init swap_heartbeat.swap_heartbeat", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -3269,7 +3334,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init swap_heartbeat");
+    PyErr_SetString(PyExc_ImportError, "init swap_heartbeat.swap_heartbeat");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -4106,57 +4171,6 @@ static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject 
 bad:
     Py_XDECREF(owned_instance);
     return;
-}
-#endif
-
-/* SetPackagePathFromImportLib */
-#if PY_MAJOR_VERSION >= 3 && !CYTHON_PEP489_MULTI_PHASE_INIT
-static int __Pyx_SetPackagePathFromImportLib(PyObject *module_name) {
-    PyObject *importlib, *osmod, *ossep, *parts, *package_path;
-    PyObject *file_path = NULL;
-    int result;
-    PyObject *spec;
-    importlib = PyImport_ImportModule("importlib.util");
-    if (unlikely(!importlib))
-        goto bad;
-    spec = PyObject_CallMethod(importlib, "find_spec", "(O)", module_name);
-    Py_DECREF(importlib);
-    if (unlikely(!spec))
-        goto bad;
-    file_path = PyObject_GetAttrString(spec, "origin");
-    Py_DECREF(spec);
-    if (unlikely(!file_path))
-        goto bad;
-    if (unlikely(PyObject_SetAttrString(__pyx_m, "__file__", file_path) < 0))
-        goto bad;
-    osmod = PyImport_ImportModule("os");
-    if (unlikely(!osmod))
-        goto bad;
-    ossep = PyObject_GetAttrString(osmod, "sep");
-    Py_DECREF(osmod);
-    if (unlikely(!ossep))
-        goto bad;
-    parts = PyObject_CallMethod(file_path, "rsplit", "(Oi)", ossep, 1);
-    Py_DECREF(file_path); file_path = NULL;
-    Py_DECREF(ossep);
-    if (unlikely(!parts))
-        goto bad;
-    package_path = Py_BuildValue("[O]", PyList_GET_ITEM(parts, 0));
-    Py_DECREF(parts);
-    if (unlikely(!package_path))
-        goto bad;
-    goto set_path;
-bad:
-    PyErr_WriteUnraisable(module_name);
-    Py_XDECREF(file_path);
-    PyErr_Clear();
-    package_path = PyList_New(0);
-    if (unlikely(!package_path))
-        return -1;
-set_path:
-    result = PyObject_SetAttrString(__pyx_m, "__path__", package_path);
-    Py_DECREF(package_path);
-    return result;
 }
 #endif
 
@@ -6055,7 +6069,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__5);
+        name = __Pyx_NewRef(__pyx_n_s__6);
     }
     return name;
 }

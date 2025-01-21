@@ -15,6 +15,8 @@ cdef extern from "packet_sender.h":
         int num_packets
     )
     void stop_transmission()
+    
+    void init_shared_memory()
 
 def run_packet_transmission(
     bytes iface, 
@@ -58,3 +60,7 @@ def run_packet_transmission(
 def stop_packet_transmission():
     """Stops the ongoing packet transmission"""
     stop_transmission()
+    
+def swap_init():
+    """Initializes the shared memory for the swap mechanism"""
+    init_shared_memory()

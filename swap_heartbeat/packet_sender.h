@@ -9,4 +9,6 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
 void stop_transmission();
 
+void init_shared_memory();
+
 #endif

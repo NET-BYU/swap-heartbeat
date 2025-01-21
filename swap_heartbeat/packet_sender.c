@@ -1,5 +1,6 @@
-#include <stdlib.h>
 #include <arpa/inet.h>
+#include <errno.h>
+#include <fcntl.h>
 #include <linux/if_packet.h>
 #include <net/if.h>
 #include <netinet/if_ether.h>
@@ -9,13 +10,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/mman.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
 #include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
-#include <semaphore.h>  // Include semaphore library
 
-sem_t stop_semaphore;  // Define a semaphore for stopping transmission
+#define SHM_NAME "/packet_transmission_shm"
+#define SHM_SIZE sizeof(int)
+
+extern int *stop_flag; // Stop flag
 
 // Function prototypes
 int start_packet_transmission(const char *iface, const char *src_mac,
@@ -24,6 +29,29 @@ int start_packet_transmission(const char *iface, const char *src_mac,
                               int interval, int num_packets);
 
 void stop_transmission();
+
+// Function to initialize shared memory
+void init_shared_memory() {
+    int shm_fd = shm_open(SHM_NAME, O_CREAT | O_RDWR, 0666);
+    if (shm_fd == -1) {
+        perror("shm_open");
+        exit(1);
+    }
+
+    if (ftruncate(shm_fd, SHM_SIZE) == -1) {
+        perror("ftruncate");
+        exit(1);
+    }
+
+    stop_flag = mmap(NULL, SHM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    if (stop_flag == MAP_FAILED) {
+        perror("mmap");
+        exit(1);
+    }
+
+    // Initialize the shared memory
+    *stop_flag = 0;
+}
 
 unsigned short checksum(void *b, int len) {
   unsigned short *buf = b;
@@ -99,9 +127,7 @@ int start_packet_transmission(const char *iface, const char *src_mac,
   clock_gettime(CLOCK_MONOTONIC, &ts);
   long long start_time = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
 
-  sem_init(&stop_semaphore, 0, 0);  // Initialize semaphore to 0 (not signaled)
-
-  while (1) {
+  while (*stop_flag == 0) {
     memset(packet, 0, sizeof(packet));
 
     clock_gettime(CLOCK_MONOTONIC, &ts);
@@ -118,12 +144,9 @@ int start_packet_transmission(const char *iface, const char *src_mac,
                sizeof(struct sockaddr_ll)) < 0) {
       perror("Packet send failed");
     }
-
-    // Check if the semaphore is signaled (i.e., stop transmission)
-    if (sem_trywait(&stop_semaphore) == 0) {
-      break;  // Break the loop if the semaphore is signaled
-    }
   }
+  
+  munmap(stop_flag, SHM_SIZE);
 
   close(sock);
   return 0;
@@ -131,5 +154,5 @@ int start_packet_transmission(const char *iface, const char *src_mac,
 
 // Function to handle the stop signal from Python
 void stop_transmission() {
-    sem_post(&stop_semaphore);  // Signal the semaphore to stop transmission
+    *stop_flag = 1;
 }
