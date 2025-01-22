@@ -63,6 +63,36 @@ unsigned short checksum(void *b, int len) {
   return result;
 }
 
+unsigned short tcp_checksum(struct iphdr *iph, struct tcphdr *tcph) {
+    struct pseudo_header {
+        u_int32_t source_address;
+        u_int32_t dest_address;
+        u_int8_t placeholder;
+        u_int8_t protocol;
+        u_int16_t tcp_length;
+    } psh;
+
+    int total_len = sizeof(struct pseudo_header) + sizeof(struct tcphdr);
+    char *buffer = (char *)malloc(total_len);
+
+    // Set up the pseudo header
+    psh.source_address = iph->saddr;
+    psh.dest_address = iph->daddr;
+    psh.placeholder = 0;
+    psh.protocol = IPPROTO_TCP;
+    psh.tcp_length = htons(sizeof(struct tcphdr));
+
+    // Copy the pseudo header and TCP header into a buffer
+    memcpy(buffer, &psh, sizeof(struct pseudo_header));
+    memcpy(buffer + sizeof(struct pseudo_header), tcph, sizeof(struct tcphdr));
+
+    // Calculate the checksum
+    unsigned short checksum_result = checksum((unsigned short *)buffer, total_len);
+
+    free(buffer);
+    return checksum_result;
+}
+
 void create_packet(char *packet, uint32_t seq_num, const char *src_mac,
                    const char *dst_mac, const char *src_ip, const char *dst_ip,
                    int src_port, int dst_port) {
@@ -96,6 +126,7 @@ void create_packet(char *packet, uint32_t seq_num, const char *src_mac,
   tcph->syn = 1;
   tcph->window = htons(5840);
   tcph->urg_ptr = 0;
+  tcph->check = tcp_checksum(iph, tcph);
 }
 
 int start_packet_transmission(const char *iface, const char *src_mac,
